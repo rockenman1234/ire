@@ -1,11 +1,11 @@
-use bytes::BytesMut;
+use bytes_04::BytesMut;
 use cookie_factory::GenError;
-use futures::{sink, stream::StreamFuture, try_ready, Async, Future, Poll, Sink, Stream};
+use futures_01::{sink, stream::StreamFuture, try_ready, Async, Future, Poll, Sink, Stream};
 use nom::{Err, Offset};
 use std::iter::repeat;
 use std::ops::AddAssign;
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
-use tokio::{
+use tokio_01::{
     codec::{Decoder, Encoder, Framed, FramedParts},
     io::{self, AsyncRead, AsyncWrite},
 };
@@ -865,7 +865,7 @@ mod tests {
     use super::{IBHandshake, IBHandshakeState, OBHandshake, OBHandshakeState};
     use crate::transport::tests::{AliceNet, BobNet, NetworkCable};
 
-    use futures::{Async, Future};
+    use futures_01::{Async, Future};
 
     use crate::data::RouterSecretKeys;
 

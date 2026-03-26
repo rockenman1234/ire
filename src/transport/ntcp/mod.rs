@@ -2,9 +2,9 @@
 //!
 //! [NTCP specification](https://geti2p.net/en/docs/transport/ntcp)
 
-use bytes::BytesMut;
+use bytes_04::BytesMut;
 use cookie_factory::GenError;
-use futures::{
+use futures_01::{
     stream::{SplitSink, SplitStream},
     sync::mpsc,
     try_ready, Async, AsyncSink, Future, Poll, Sink, StartSend, Stream,
@@ -14,7 +14,7 @@ use std::iter::repeat;
 use std::net::SocketAddr;
 use std::sync::Arc;
 use std::time::Duration;
-use tokio::{
+use tokio_01::{
     codec::{Decoder, Encoder, Framed},
     io::{self, AsyncRead, AsyncWrite},
     net::tcp::{TcpListener, TcpStream},
@@ -523,12 +523,12 @@ impl<D: Distributor> Sink for OutboundSink<D> {
 
 #[cfg(test)]
 mod tests {
-    use bytes::BytesMut;
+    use bytes_04::BytesMut;
     use cookie_factory::GenError;
-    use futures::{lazy, Future, Sink};
+    use futures_01::{lazy, Future, Sink};
     use nom::{Err, Offset};
     use std::iter::repeat;
-    use tokio::{
+    use tokio_01::{
         codec::{Decoder, Encoder},
         io::{self, Read, Write},
     };

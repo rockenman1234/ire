@@ -1,4 +1,4 @@
-use futures::{
+use futures_01::{
     future::{self, Either},
     sync::oneshot,
     Future, Sink,
@@ -6,7 +6,7 @@ use futures::{
 use std::collections::{BTreeMap, HashSet};
 use std::sync::Arc;
 use std::time::Duration;
-use tokio::timer::Timeout;
+use tokio_01::timer::Timeout;
 
 use super::{
     create_routing_key,

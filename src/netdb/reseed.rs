@@ -1,10 +1,10 @@
-use futures::{future, Async, Future, Poll};
+use futures_01::{future, Async, Future, Poll};
 use native_tls::{Certificate, TlsConnector};
 use rand::{seq::SliceRandom, thread_rng};
 use std::collections::HashMap;
 use std::net::ToSocketAddrs;
 use std::time::Duration;
-use tokio::{io, net::tcp::TcpStream, timer::Timeout};
+use tokio_01::{io, net::tcp::TcpStream, timer::Timeout};
 
 use super::client::{Client, StoreRouterInfo};
 use crate::crypto::{OfflineSigningPublicKey, SigType};

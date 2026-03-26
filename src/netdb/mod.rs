@@ -1,7 +1,7 @@
 //! The I2P network database.
 
 use chrono::offset::Utc;
-use futures::{
+use futures_01::{
     future,
     sync::{mpsc, oneshot},
     Async, Future, Poll, Stream,
@@ -11,7 +11,7 @@ use sha2::{Digest, Sha256};
 use std::collections::HashMap;
 use std::sync::Arc;
 use std::time::{Duration, Instant, SystemTime};
-use tokio::{
+use tokio_01::{
     executor::{spawn, DefaultExecutor},
     timer::Delay,
 };
@@ -512,7 +512,7 @@ impl LocalNetworkDatabase {
 
 #[cfg(test)]
 mod tests {
-    use futures::{sync::mpsc, Async};
+    use futures_01::{sync::mpsc, Async};
     use std::time::{Duration, SystemTime};
 
     use super::{

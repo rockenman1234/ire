@@ -1,8 +1,8 @@
 //! The traits for the various router components.
 
-use futures::{sync::mpsc, Future};
+use futures_01::{sync::mpsc, Future};
 use std::sync::Arc;
-use tokio::io;
+use tokio_01::io;
 
 use super::Context;
 use crate::data::{Hash, RouterAddress, RouterInfo};

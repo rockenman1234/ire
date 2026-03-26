@@ -4,9 +4,9 @@
 //! self-consistency across its component's API.
 
 use config::Config;
-use futures::{future, sync::mpsc, Future};
+use futures_01::{future, sync::mpsc, Future};
 use std::sync::{Arc, Mutex, RwLock};
-use tokio::io;
+use tokio_01::io;
 
 use super::types::{CommSystem, Distributor, DistributorResult};
 use crate::data::{Hash, RouterAddress, RouterInfo, RouterSecretKeys};

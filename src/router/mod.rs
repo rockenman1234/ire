@@ -1,10 +1,10 @@
-use futures::{
+use futures_01::{
     future::{self, lazy},
     sync::mpsc,
     Future, Sink,
 };
 use std::sync::{Arc, RwLock};
-use tokio::{io, spawn};
+use tokio_01::{io, spawn};
 
 use crate::data::{Hash, RouterInfo, RouterSecretKeys};
 use crate::i2np::{Message, MessagePayload};

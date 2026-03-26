@@ -8,7 +8,7 @@ extern crate ire;
 extern crate tokio;
 
 use clap::{builder::PossibleValuesParser, Arg, ArgAction, ArgMatches, Command};
-use futures::{Future, Sink};
+use futures_01::{Future, Sink};
 use ire::{
     data, i2np,
     netdb::reseed::HttpsReseeder,
@@ -109,7 +109,7 @@ fn cli_router(args: &ArgMatches) -> i32 {
 
     let runner = r.start();
 
-    tokio::run(runner.map_err(|_| ()));
+    tokio_01::run(runner.map_err(|_| ()));
     0
 }
 
@@ -141,7 +141,7 @@ fn cli_client(args: &ArgMatches) -> i32 {
                     Ok(())
                 })
                 .map_err(|e| error!("Connection error: {}", e));
-            tokio::run(conn);
+            tokio_01::run(conn);
         }
         Some("NTCP2") => {
             let mut ntcp2 =
@@ -159,7 +159,7 @@ fn cli_client(args: &ArgMatches) -> i32 {
                     Ok(())
                 })
                 .map_err(|e| error!("Connection error: {}", e));
-            tokio::run(conn);
+            tokio_01::run(conn);
         }
         Some(_) => panic!("Unknown transport specified"),
         None => panic!("No transport specified"),
@@ -169,7 +169,7 @@ fn cli_client(args: &ArgMatches) -> i32 {
 
 fn cli_reseed() -> i32 {
     let reseeder = HttpsReseeder::new(mock_context().netdb.clone());
-    tokio::run(reseeder);
+    tokio_01::run(reseeder);
     0
 }
 

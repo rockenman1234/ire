@@ -1,10 +1,10 @@
 //! Fast-path processing of tunnel data in participating tunnels.
 
-use futures::{sync::mpsc, try_ready, Async, Future, Poll, Stream};
+use futures_01::{sync::mpsc, try_ready, Async, Future, Poll, Stream};
 use std::collections::HashMap;
 use std::sync::{Arc, RwLock};
 use std::time::{Duration, Instant, SystemTime};
-use tokio::{io, spawn, timer::Delay};
+use tokio_01::{io, spawn, timer::Delay};
 use tokio_threadpool::blocking;
 
 use super::{encryption::LayerCipher, HopConfig, HopData, TUNNEL_LIFETIME};

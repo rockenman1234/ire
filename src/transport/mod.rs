@@ -1,9 +1,9 @@
 //! Transports used for point-to-point communication between I2P routers.
 
-use futures::{future::lazy, Future, Poll, Sink, StartSend};
+use futures_01::{future::lazy, Future, Poll, Sink, StartSend};
 use std::iter::once;
 use std::sync::Arc;
-use tokio::{executor::spawn, io};
+use tokio_01::{executor::spawn, io};
 
 use crate::crypto::dh::DHSessionKeyBuilder;
 use crate::data::{Hash, RouterAddress, RouterInfo};
@@ -138,11 +138,11 @@ impl<D: Distributor> CommSystem for Manager<D> {
 
 #[cfg(test)]
 mod tests {
-    use futures::Async;
+    use futures_01::Async;
     use std::net::SocketAddr;
     use std::sync::{Arc, Mutex};
     use tempfile::tempdir;
-    use tokio::io::{self, AsyncRead, AsyncWrite, Read, Write};
+    use tokio_01::io::{self, AsyncRead, AsyncWrite, Read, Write};
 
     use super::*;
     use crate::router::mock::MockDistributor;

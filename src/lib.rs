@@ -1,7 +1,7 @@
 //! An I2P router implementation in Rust.
 
 #![allow(unknown_lints)]
-#![cfg_attr(all(test, feature = "nightly"), feature(test))]
+#![cfg_attr(all(test, feature = "nightly", has_nightly), feature(test))]
 // Catch documentation errors caused by code changes.
 #![deny(rustdoc::broken_intra_doc_links)]
 // Lints we haven't dealt with yet.
@@ -19,7 +19,7 @@ extern crate lazy_static;
 #[macro_use]
 extern crate log;
 
-#[cfg(all(test, feature = "nightly"))]
+#[cfg(all(test, feature = "nightly", has_nightly))]
 extern crate test;
 
 mod constants;

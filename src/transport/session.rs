@@ -1,6 +1,6 @@
 //! Common structures for managing active sessions over individual transports.
 
-use futures::{sync::mpsc, Async, AsyncSink, Poll, Sink, StartSend, Stream};
+use futures_01::{sync::mpsc, Async, AsyncSink, Poll, Sink, StartSend, Stream};
 use std::collections::HashMap;
 use std::fmt;
 use std::io;

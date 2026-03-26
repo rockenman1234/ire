@@ -1,5 +1,5 @@
 use cookie_factory::GenError;
-use futures::{Async, Future, Poll};
+use futures_01::{Async, Future, Poll};
 use i2p_snow::{Builder, Session};
 use nom::Err;
 use rand::{rngs::OsRng, Rng};
@@ -7,7 +7,7 @@ use siphasher::sip::SipHasher;
 use std::net::SocketAddr;
 use std::ops::AddAssign;
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
-use tokio::{
+use tokio_01::{
     codec::{Decoder, Framed},
     io::{self, AsyncRead, AsyncWrite, ReadExact, WriteAll},
 };
@@ -559,7 +559,7 @@ mod tests {
         tests::{AliceNet, BobNet, NetworkCable},
     };
 
-    use futures::{done, Async, Future};
+    use futures_01::{done, Async, Future};
 
     use crate::data::{RouterInfo, RouterSecretKeys};
     use crate::router::mock::MockDistributor;
@@ -659,14 +659,14 @@ mod tests {
         }
     }
 
-    #[cfg(all(test, feature = "nightly"))]
+    #[cfg(all(test, feature = "nightly", has_nightly))]
     mod transfer {
-        use futures::*;
+        use futures_01::*;
         use std::cmp;
         use std::io;
         use std::time::Duration;
         use test::Bencher;
-        use tokio::{
+        use tokio_01::{
             codec::Framed,
             net::{TcpListener, TcpStream},
         };

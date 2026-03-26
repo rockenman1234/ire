@@ -1,5 +1,5 @@
 use ::config::{Config, ConfigError, File};
-use futures::sync::mpsc;
+use futures_01::sync::mpsc;
 use std::fmt;
 use std::fs;
 use std::io;

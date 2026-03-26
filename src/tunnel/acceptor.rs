@@ -1,10 +1,10 @@
 //! Logic for processing incoming tunnel build requests.
 
-use futures::{sink, sync::mpsc, try_ready, Async, Future, Poll, Sink, Stream};
+use futures_01::{sink, sync::mpsc, try_ready, Async, Future, Poll, Sink, Stream};
 use std::slice::IterMut;
 use std::sync::{Arc, Mutex};
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
-use tokio::{io, spawn};
+use tokio_01::{io, spawn};
 use tokio_threadpool::blocking;
 
 use cbc::cipher::{BlockEncryptMut, KeyIvInit};
@@ -487,7 +487,7 @@ impl Future for Listener {
 
 #[cfg(test)]
 mod tests {
-    use futures::{lazy, sync::mpsc, Async, Future, Stream};
+    use futures_01::{lazy, sync::mpsc, Async, Future, Stream};
     use std::sync::{Arc, Mutex};
     use tokio_threadpool::Builder;
 

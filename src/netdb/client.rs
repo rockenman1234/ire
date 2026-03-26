@@ -1,11 +1,11 @@
 //! An asynchronous NetDB client.
 
-use futures::{
+use futures_01::{
     sync::{mpsc, oneshot},
     Async, Future, Poll,
 };
 use std::sync::Arc;
-use tokio::spawn;
+use tokio_01::spawn;
 
 use super::{errors::*, LocalNetworkDatabase};
 use crate::data::{Hash, LeaseSet, RouterInfo};

@@ -1,4 +1,4 @@
-use futures::{sync::mpsc, try_ready, Future, Poll, Stream};
+use futures_01::{sync::mpsc, try_ready, Future, Poll, Stream};
 use std::collections::HashMap;
 use std::sync::Arc;
 
